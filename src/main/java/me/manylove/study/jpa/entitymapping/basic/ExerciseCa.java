@@ -54,10 +54,6 @@ import java.util.UUID;
  *  - @Transient
  *    특정 필드를 데이터베이스에 매핑하지 않는다.
  *
- * 엔티티를 테이블에 매핑할 때, 테이블 이름과 필드이름을 따로 지정하지 않으면
- * 기본 매핑 규칙에 맞춰 이름을 변환해서 매핑한다.
- * 스프링 부트 프레임워크에서 사용하는 기본 매핑 규칙 : 파스칼 or 카멜 -> 스네이크
- *
  * ==========================================================================
  **/
 
@@ -243,23 +239,11 @@ public class ExerciseCa {
     @Column(columnDefinition = "NUMERIC(20) UNIQUE")
     private int P83_addColumnDefinition;
 
-    @Column(insertable = false)
-    private String P84_insertableFalse;
-
-    @Column(updatable = false)
-    private String P85_updatableFalse;
-
     /**
      * [ 코드를 통해 살펴 볼 내용 ]
      * 16. 객체와 필드명과 관계없이 필드명을 직접 입력하여 매핑 할 수도 있다.
      * 17. Not Null 제약조건을 설정할 수 있다.
      * 18. Unique 제약조건을 설정할 수 있다.
      * 19. 컬럼의 정보를 직접 작성할 수 있다.
-     * 20. insertable 과 updatable 속성은 엔티티 매핑에 관련된 속성이 아니다.
-     *    데이터를 입력하고, 수정하는 과정에 영향을 주는 속성이다.
-     *    주로, 필드가 데이터베이스 자체에서 자동으로 채워지는 경우 insertable 을 사용하여 읽기전용 속성으로 만든다.
-     *    또 처음 값을 입력한 다음에, 수정되지 않는 필드 항목에 updatable = false 를 주기도 한다.
-     *    JPA에서 자동으로 채워주는 상속 매핑에 사용되는 값을 읽기전용으로 불러오는 경우에 insertable과 updatable을 false로 변경하지 않으면
-     *    중복으로 해당 값이 채워져 입력 오류가 발생하기도 한다.
      */
 }
