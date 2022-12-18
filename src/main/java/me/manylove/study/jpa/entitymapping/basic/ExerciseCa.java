@@ -13,50 +13,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * == C. 필드와 컬럼 매핑 =====================================================
- * 자바속성과 데이터베이스의 컬럼은 어떻게 매핑 할 수 있을까?
- * 컬럼매핑을 위해 사용되는 어노테이션의 종류와 속성들에 대해서 알아봅니다.
- *
- *  = @Column
- *    컬럼을 매핑한다.
- *    - name                : 매핑할 컬럼 이름
- *    - unique              : [DDL] unique 제약조건이 추가 여부
- *                            true / false (기본값)
- *    - nullable            : [DDL] NOT NULL 제약조건 추가 여부
- *                            true (기본값) / false
- *    - insertable          : 생성시 속성 입력값 데이터 베이스 저장 여부
- *                            true (기본값) / false
- *    - updatable           : 업데이트 시 변경 값 데이터 베이스 저장 여부
- *                            true (기본값) / false
- *    - columnDefinition    : [DDL] 데이터베이스 컬럼 정보를 직접 입력
- *    - table               : 하나의 엔티티를 두 개 이상의 테이블에 매핑 할 때 사용
- *    - length              : [DDL] 문자길이 제약 조건.
- *                            String 타입에만 사용.
- *    - precision           : [DDL] 소수점을 포함한 전체 자리 수
- *                            BigDecimal , BigInteger 타입에서만 사용
- *    - scale               : [DDL] 소수의 자리수
- *                            BigDecimal , BigInteger 타입에서만 사용
- *
- *  - @Enumerated
- *    enum 타입 컬럼
- *    - value               : 저장 방법을 설정합니다.
- *                            EnumType.ORDINAL (기본값) / EnumType.STRING
- *
- *  - @Temporal
- *    자바의 Date 타입과 Calendar 타입을 데이터베이스에서 사용하는 특정 타입과 매핑한다.
- *    - value               : 매핑할 타입
- *                            TemporalType.DATE / TemporalType.TIME / TemporalType.TIMESTAMP (기본값)
- *
- *  - @Lob
- *    BLOB, CLOB 타입을 매핑한다.
- *
- *  - @Transient
- *    특정 필드를 데이터베이스에 매핑하지 않는다.
- *
- * ==========================================================================
- **/
-
 @Entity
 @Getter @Setter
 public class ExerciseCa {
