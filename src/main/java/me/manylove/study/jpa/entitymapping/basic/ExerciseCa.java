@@ -7,8 +7,10 @@ import me.manylove.study.jpa.entitymapping.util.ExType;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -87,6 +89,10 @@ public class ExerciseCa {
     @Enumerated(EnumType.STRING)
     private ExType P33_enumeratedTypeString;
 
+    @Column(length=500)
+    @Enumerated(EnumType.STRING)
+    private ExType P33_enumeratedTypeStringLength;
+
     /**
      * [ 코드를 통해 살펴 볼 내용 ]
      * 7. 위의 3개는 같은 결과를 같는다.
@@ -121,6 +127,10 @@ public class ExerciseCa {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar P50_calendarTemporalTypeTimestamp;
+
+    private Time time;
+
+    private LocalTime localTime;
 
     /**
      * [ 코드를 통해 살펴 볼 내용 ]
@@ -189,7 +199,7 @@ public class ExerciseCa {
     @Column(nullable = false)
     private String P81_addNotNull;
 
-    @Column(unique = true)
+    @Column(unique = true) // TODO 왜 안되는지 확인 필요!
     private String P82_addUnique;
 
     @Column(columnDefinition = "NUMERIC(20) UNIQUE")
